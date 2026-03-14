@@ -1,8 +1,7 @@
 # Junior Backend Quest v1.1.2
 
 **Submitted by:** Gabriel Breuyan  
-**Stack:** Node.js v20 · TypeScript · tsx  
-**Repo:** [https://github.com/YOUR_USERNAME/junior-backend-quest-v1.1.2](https://github.com/YOUR_USERNAME/junior-backend-quest-v1.1.2)
+**Stack:** Node.js v20 · TypeScript · tsx
 
 ---
 
