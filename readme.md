@@ -5,18 +5,6 @@
 
 ---
 
-## Setup
-
-```bash
-git clone https://github.com/YOUR_USERNAME/junior-backend-quest-v1.1.2
-cd junior-backend-quest-v1.1.2
-npm install
-```
-
-**Requirements:** Node.js v20+, npm v9+
-
----
-
 ## Quest 1 — RPA Web Crawling
 
 Crawls a target page for PDF links and downloads them. Blocks unnecessary assets (images, fonts, media) for speed. Falls back to a browser session automatically if direct download is blocked.
