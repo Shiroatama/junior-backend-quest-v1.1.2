@@ -1,0 +1,48 @@
+# Cursor Rules — junior-backend-quest-v1.1.2
+
+## Stack
+- Node.js v20+ / TypeScript / tsx (no compile step)
+- No frameworks. No Express. No Next.js.
+- ESM modules only (`"type": "module"` in package.json)
+
+## Code Style
+- Functional over OOP — plain functions, no classes unless unavoidable
+- Explicit types — no `any`, no implicit returns on non-trivial functions
+- Early returns over nested if-else
+- Descriptive variable names — no single letters except loop indices
+- No comments that restate what the code does — only comment WHY if non-obvious
+
+## File Rules
+- One responsibility per file
+- Each quest is self-contained in its own directory
+- Shared utilities go in `src/utils/` — don't repeat yourself across quests
+- All output paths relative to project root via `process.cwd()`
+
+## Error Handling
+- Always use try/catch on async operations
+- Log errors with context: what failed, why, what was attempted
+- Retry logic: max 3 attempts with exponential backoff for network ops
+- Never silently swallow errors
+
+## Performance
+- Parallel over sequential — use `Promise.all` where possible
+- Block unnecessary network requests in Puppeteer (images, fonts, CSS)
+- Measure and log elapsed time for every quest run
+- No `setTimeout` for waiting — use explicit selector/network waits
+
+## Puppeteer
+- Always launch with `headless: true` in production
+- Always close browser in `finally` block — no dangling processes
+- Use `page.setRequestInterception(true)` to block assets
+- Prefer `waitForSelector` over `waitForTimeout`
+
+## Logging
+- Format: `[QuestN] message`
+- Always log: start, key milestones, file saved, elapsed time
+- Errors to stderr: `console.error`
+- Quest 4 additionally writes to `/logs/quest4.log`
+
+## Dependencies
+- Add nothing without a reason
+- Prefer Node built-ins (`fs/promises`, `https`, `path`) over npm packages when trivial
+- Lock versions in package.json
